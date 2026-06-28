@@ -1,10 +1,10 @@
-FROM osrf/ros:humble-desktop-full
+FROM osrf/ros:jazzy-desktop-full
 
 RUN apt-get update && apt-get install -y \
     python3-colcon-common-extensions \
-    ros-humble-moveit\
-    ros-humble-ros2-control\
-    ros-humble-ros2-controllers\
+    ros-jazzy-moveit\
+    ros-jazzy-ros2-control\
+    ros-jazzy-ros2-controllers\
     git \
     && rm -rf /var/lib/apt/lists/*
 
@@ -13,7 +13,7 @@ WORKDIR /ros2_ws
 RUN mkdir /ros2_ws/src
 
 # Automatically source ROS and your workspace in every new terminal
-RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
 RUN echo "if [ -f /ros2_ws/install/setup.bash ]; then source /ros2_ws/install/setup.bash; fi" >> ~/.bashrc
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
