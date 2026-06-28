@@ -1,8 +1,10 @@
-FROM osrf/ros:jazzy-desktop-full
+FROM osrf/ros:humble-desktop-full
 
 RUN apt-get update && apt-get install -y \
     python3-colcon-common-extensions \
-    ros-jazzy-moveit\
+    ros-humble-moveit\
+    ros-humble-ros2-control\
+    ros-humble-ros2-controllers\
     git \
     && rm -rf /var/lib/apt/lists/*
 

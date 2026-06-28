@@ -1,7 +1,7 @@
 services:
   ros-dev:
     build: .
-    image: so_arm101_jazzy
+    image: so_arm101_humble
     container_name: so_arm101
     runtime: nvidia
     network_mode: host
