@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
 
 # Create a workspace
 WORKDIR /ros2_ws
-RUN mkdir /ros2_ws/src
 
 # Automatically source ROS and your workspace in every new terminal
 RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
