@@ -13,7 +13,7 @@ WORKDIR /ros2_ws
 RUN mkdir /ros2_ws/src
 
 # Automatically source ROS and your workspace in every new terminal
-RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 RUN echo "if [ -f /ros2_ws/install/setup.bash ]; then source /ros2_ws/install/setup.bash; fi" >> ~/.bashrc
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
