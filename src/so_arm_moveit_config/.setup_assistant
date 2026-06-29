@@ -5,9 +5,9 @@ moveit_setup_assistant_config:
   srdf:
     relative_path: config/so101_new_calib.srdf
   package_settings:
-    author_name: LycheeAI
-    author_email: contact@lycheeai-hub.com
-    generated_timestamp: 1748373651
+    author_name: siddartha00
+    author_email: allenisaisiddharth@gmail.com
+    generated_timestamp: 1782743749
   control_xacro:
     command:
       - position
