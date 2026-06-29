@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <xacro:macro name="so101_new_calib_ros2_control" params="name initial_positions_file">
-        <xacro:property name="initial_positions" value="${load_yaml(initial_positions_file)['initial_positions']}"/>
+        <xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions']}"/>
 
         <ros2_control name="${name}" type="system">
             <hardware>
                 <!-- By default, set up controllers for simulation. This won't work on real hardware -->
                 <!-- plugin>mock_components/GenericSystem</plugin -->
-                <plugin>topic_based_ros2_control/TopicBasedSystem</plugin>
+                <plugin>joint_state_topic_hardware_interface/JointStateTopicSystem</plugin>
                 <param name="joint_commands_topic">/isaac_joint_command</param>
                 <param name="joint_states_topic">/isaac_joint_states</param>
             </hardware>
@@ -17,6 +17,7 @@
                   <param name="initial_value">${initial_positions['Rotation']}</param>
                 </state_interface>
                 <state_interface name="velocity"/>
+                <state_interface name="effort"/>
             </joint>
             <joint name="Pitch">
                 <command_interface name="position"/>
@@ -24,6 +25,7 @@
                   <param name="initial_value">${initial_positions['Pitch']}</param>
                 </state_interface>
                 <state_interface name="velocity"/>
+                <state_interface name="effort"/>
             </joint>
             <joint name="Elbow">
                 <command_interface name="position"/>
@@ -31,6 +33,7 @@
                   <param name="initial_value">${initial_positions['Elbow']}</param>
                 </state_interface>
                 <state_interface name="velocity"/>
+                <state_interface name="effort"/>
             </joint>
             <joint name="Wrist_Pitch">
                 <command_interface name="position"/>
@@ -38,6 +41,7 @@
                   <param name="initial_value">${initial_positions['Wrist_Pitch']}</param>
                 </state_interface>
                 <state_interface name="velocity"/>
+                <state_interface name="effort"/>
             </joint>
             <joint name="Wrist_Roll">
                 <command_interface name="position"/>
@@ -45,6 +49,7 @@
                   <param name="initial_value">${initial_positions['Wrist_Roll']}</param>
                 </state_interface>
                 <state_interface name="velocity"/>
+                <state_interface name="effort"/>
             </joint>
             <joint name="Jaw">
                 <command_interface name="position"/>
@@ -52,6 +57,7 @@
                   <param name="initial_value">${initial_positions['Jaw']}</param>
                 </state_interface>
                 <state_interface name="velocity"/>
+                <state_interface name="effort"/>
             </joint>
 
         </ros2_control>

@@ -14,6 +14,7 @@ services:
       - __NV_PRIME_RENDER_OFFLOAD=1
       - __GLX_VENDOR_LIBRARY_NAME=nvidia
       - ROS_DOMAIN_ID=${ROS_DOMAIN_ID}
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/ros2_ws/fastdds.xml
     deploy:
       resources:
         reservations:
@@ -23,6 +24,6 @@ services:
               capabilities: [gpu]
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./src:/ros2_ws/src
+      - ./:/ros2_ws
     stdin_open: true
     tty: true

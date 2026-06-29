@@ -6,15 +6,15 @@
   <description>
      An automatically generated package with all the configuration and launch files for using the so101_new_calib with the MoveIt Motion Planning Framework
   </description>
-  <maintainer email="contact@lycheeai-hub.com">LycheeAI</maintainer>
+  <maintainer email="allenisaisiddharth@gmail.com">siddartha00</maintainer>
 
-  <license>BSD</license>
+  <license>BSD-3-Clause</license>
 
   <url type="website">http://moveit.ros.org/</url>
-  <url type="bugtracker">https://github.com/ros-planning/moveit2/issues</url>
-  <url type="repository">https://github.com/ros-planning/moveit2</url>
+  <url type="bugtracker">https://github.com/moveit/moveit2/issues</url>
+  <url type="repository">https://github.com/moveit/moveit2</url>
 
-  <author email="contact@lycheeai-hub.com">LycheeAI</author>
+  <author email="allenisaisiddharth@gmail.com">siddartha00</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
